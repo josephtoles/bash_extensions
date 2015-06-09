@@ -22,8 +22,9 @@ fi
 
 # check if file exists in recycle directory. Append integer if necessary
 filename=`basename $1`
-target="$RECYCLE_DIRECTORY/$filename"
 index=0
+target="${RECYCLE_DIRECTORY}/${filename}_${index}"
+#TODO reformat into "until" loop
 while [ -e $target ]
 do
   let "index += 1"
